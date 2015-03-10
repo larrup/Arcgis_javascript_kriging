@@ -42,9 +42,13 @@
                     }
             );
             // Get cookie data from index.html
+
+
             var x = document.cookie;
-            if(x === null){
-                alert("You have not drag your csv file to last page");
+            //alert(typeof(x));
+            if(x === ''){
+                alert("You have not drag your csv file to last page. Return to last page");
+                window.setTimeout("window.location = 'index.html'", 2000);
             }
             x = x.split(',');
             var dataCSV = [];
