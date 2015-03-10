@@ -43,6 +43,9 @@
             );
             // Get cookie data from index.html
             var x = document.cookie;
+            if(x === null){
+                alert("You have not drag your csv file to last page");
+            }
             x = x.split(',');
             var dataCSV = [];
             var krigingValue = [];
