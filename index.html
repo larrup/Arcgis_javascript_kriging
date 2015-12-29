@@ -80,37 +80,19 @@ require([
 
    //
 
-    //var gl = new GraphicsLayer({ id: "circles" });
-    //window.alert("y");
-
-
-
-
-    map.on("click", function(e){
-        window.alert("xiaxia");
-    });
-
-
     //createPolygon();
 
     map.infoWindow.resize(275, 175);
 
     function createPolygon()
       {
-          window.alert("p");
           var polygonJson  = {"rings":[[[-81.3765,28.54175],[-95.3765,59.54175],[-101.3765, 28.54175]]],"spatialReference":{"wkid":4326 }};
           var polygon = new esri.geometry.Polygon(polygonJson);
           var simpleFillSymbol = new SimpleFillSymbol();
-          //simpleFillSymbol.setColor(new esri.Color([255,255,0,0.5]));
-          window.alert("polygon create");
           var gl = new GraphicsLayer({ id: "circles" });
-          window.alert("php");
           map.add(gl);
           var graphic1 = new Graphic(polygon, simpleFillSymbol);
-          window.alert("k");
           gl.add(graphic1);
-          window.alert("h");
-
       }
 
 
@@ -247,7 +229,7 @@ require([
             height > 64 ? 64 : height);
           var point = map.toMap(new Point(x, y));
           var graphic = new Graphic(point, symbol);
-          windows.alert("hehe");
+          
           map.graphics.add(graphic);
 
 
@@ -414,7 +396,6 @@ require([
           });
            // var gl = new FeatureLayer({ id: "circles" });
           //var gl = new GraphicsLayer({ id: "polygon"});
-          window.alert("haha");
           featureLayer.__popupInfo = popupInfo;
           map.addLayer(featureLayer);
           zoomToData(featureLayer);
@@ -445,10 +426,6 @@ require([
         var xnew, ynew /* Pair of new coordinates to predict */;
         var tpredicted = kriging.predict(12957999, 4859405, variogram);
         //createPolygon();
-        window.alert(tpredicted);
-
-
-
     }
 
     function generateFeatureCollectionTemplateCSV (store, items) {
